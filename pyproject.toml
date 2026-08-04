@@ -1,6 +1,6 @@
 [project]
 name = "bytestream"
-version = "0.1.0"
+version = "0.1.1"
 description = "A simple struct module wrapper that provides convenient interface for reading and writing bytes"
 readme = "README.md"
 authors = [{ name = "Danila Schelkov", email = "me@donutquine.dev" }]

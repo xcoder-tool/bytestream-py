@@ -1,15 +1,36 @@
 import struct
 from collections.abc import Buffer
 from io import BytesIO
-from typing import Literal
+
+from ._types import EndianSign, EndianStr
 
 
 class BinaryWriter:
-    def __init__(self, endian: Literal["little", "big"]) -> None:
+    def __init__(self, endian: EndianStr) -> None:
         self._internal_writer: BytesIO = BytesIO()
 
-        self._endian: Literal["little", "big"] = endian
-        self._endian_sign: Literal["<", ">"] = "<" if endian == "little" else ">"
+        self._endian: EndianStr
+        self._endian_sign: EndianSign
+
+        self.endian = endian
+
+    @property
+    def endian(self) -> EndianStr:
+        return self._endian
+
+    @endian.setter
+    def endian(self, new_endian: EndianStr) -> None:
+        self._endian = new_endian
+        self._endian_sign = "<" if new_endian == "little" else ">"
+
+    @property
+    def endian_sign(self) -> EndianSign:
+        return self._endian_sign
+
+    @endian_sign.setter
+    def endian_sign(self, new_endian_sign: EndianSign) -> None:
+        self._endian_sign = new_endian_sign
+        self._endian = "little" if new_endian_sign == "<" else "big"
 
     @property
     def buffer(self) -> bytes:
