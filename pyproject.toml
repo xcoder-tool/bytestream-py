@@ -8,6 +8,11 @@ license = "MIT"
 license-files = ["LICEN[CS]E*"]
 requires-python = ">=3.13"
 
+[project.urls]
+Homepage = "https://github.com/xcoder-tool/bytestream-py"
+Repository = "https://github.com/xcoder-tool/bytestream-py.git"
+Issues = "https://github.com/xcoder-tool/bytestream-py/issues"
+
 [build-system]
 requires = ["uv_build>=0.10.0,<0.11.0"]
 build-backend = "uv_build"
