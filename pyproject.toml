@@ -1,0 +1,13 @@
+[project]
+name = "bytestream"
+version = "0.1.0"
+description = "A simple struct module wrapper that provides convenient interface for reading and writing bytes"
+readme = "README.md"
+authors = [{ name = "Danila Schelkov", email = "me@donutquine.dev" }]
+license = "MIT"
+license-files = ["LICEN[CS]E*"]
+requires-python = ">=3.13"
+
+[build-system]
+requires = ["uv_build>=0.10.0,<0.11.0"]
+build-backend = "uv_build"
